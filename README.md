@@ -9,9 +9,13 @@ I'm also installing everything necessary to migrate the SQLite database to MySQL
 However, this isn't the focus of this tutorial, and I won't be covering that topic.
 <ins>_____________________________________________________________________________________</ins>
 
+**Add repository**
+
+>add-apt-repository ppa:deadsnakes/ppa
+
 **Install all these packages:**
 
-> apt install -y python3 python3-venv python3-pip build-essential libffi-dev libssl-dev libjpeg-dev zlib1g-dev bluez
+> apt install -y python3.13 python3.13-dev python3.13-venv python3-pip build-essential libffi-dev libssl-dev libjpeg-dev zlib1g-dev bluez
 > 
 > apt install -y libbz2-dev libreadline-dev libsqlite3-dev libncursesw5-dev libxml2-dev libxmlsec1-dev libxslt1-dev
 > 
