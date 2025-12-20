@@ -80,19 +80,12 @@ However, this isn't the focus of this tutorial, and I won't be covering that top
 > hass -v
 
 **###### Wait 1 or 2 houres :-) and when you are tired to wait you can hit Ctrl-C**
-
+##############################################
 Now create the startup script /etc/init.d/homeassistant" with nano or any other tool of your choice or get it by this way:
 
 > cd /ect/init.d
 
 > wget https://raw.githubusercontent.com/comdif/Homeassistant-Core---Ubuntu-24-install/refs/heads/main/homeassistant
-
-> chmod 0755 /etc/init.d/homeassistant
-
-> update-rc.d homeassistant defaults
-
-##############################################
-Now type:
 
 > chmod 0755 /etc/init.d/homeassistant
 
