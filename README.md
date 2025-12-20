@@ -40,13 +40,15 @@ However, this isn't the focus of this tutorial, and I won't be covering that top
 ############## if there is no errors uninstall old bluez
 
 > apt-get purge bluez
+
 > make install
+
 > systemctl daemon-reload && systemctl restart dbus bluetooth
 
 ############## Check status
 
 > systemctl status bluetooth.service
-> 
+
 ############## Fix Bluetooth error messages NET_ADMIN/NET_RAW capabilities
 
 > setcap 'cap_net_admin,cap_net_raw+eip' /usr/bin/python3.13
