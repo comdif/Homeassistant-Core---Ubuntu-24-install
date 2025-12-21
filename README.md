@@ -1,10 +1,10 @@
-**The HA team no longer supports Core, but you can continue to install and use it.**
+***The Home Assistant team no longer supports Core, but you can still install and use it.***
 
-Here's how to install it on a Raspberry Pi 4 using Ubuntu 24.04 LTS.
+Here's how to install it on a Raspberry Pi 4 with Ubuntu 24.04 LTS.
 
-Everything is done as root; if you are working as a user, type sudo -i at startup or create a root password to work as root.
+All operations must be performed as administrator (root). If you're working as a user, type "sudo -i" at startup or create a root password to access administrator privileges.
 
-I'm also installing everything necessary to migrate the SQLite database to MySQL because I find HA much faster with MySQL.
+I also install all the necessary components to migrate the SQLite database to MySQL, as I find Home Assistant much faster with MySQL.
 
 However, this isn't the focus of this tutorial, and I won't be covering that topic.
 <ins>_____________________________________________________________________________________</ins>
