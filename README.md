@@ -21,7 +21,7 @@ However, this isn't the focus of this tutorial, and I won't be covering that top
 > 
 > apt install -y liblzma-dev libudev-dev avahi-daemon libavahi-client-dev dbus systemd libglib2.0-dev libc6-dev libbluetooth-dev
 > 
-> apt install -y libreadline-dev python-docutils libical-dev libsystemd-dev tk-dev libgdbm-dev pkg-config default-libmysqlclient-dev
+> apt install -y libreadline-dev python3-docutils libical-dev libsystemd-dev tk-dev libgdbm-dev pkg-config default-libmysqlclient-dev
 
 ############## Fix Bluetooth
 
