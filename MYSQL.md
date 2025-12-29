@@ -12,7 +12,7 @@ Run ssh session as root or with sudo-i
 
 ***Now create the user and the database (use 'haDBadministrat0rlogin'@'%' if you need remote mysql access )***
 
-> mysql -u root -e ""CREATE DATABASE homeassistant CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;"
+> mysql -u root -e "CREATE DATABASE homeassistant CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;"
 
 > mysql -u root -e "CREATE USER 'haDBadministrat0rlogin'@'localhost' IDENTIFIED BY 'haDBadministrat0rpassword';"
 
