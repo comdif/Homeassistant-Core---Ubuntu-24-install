@@ -1,6 +1,6 @@
 ***The Home Assistant team no longer supports Core, but you can still install and use it.***
 
-Here's how to install it on a Raspberry Pi 4 with Ubuntu 24.04 LTS.
+Here's how to install it on a Raspberry Pi 4 with Ubuntu 24.04 LTS, but the same method works perfectly for any other hardware or virtual machine.
 
 All operations must be performed as administrator (root). If you're working as a user, type "sudo -i" at startup or create a root password to access administrator privileges.
 
@@ -23,7 +23,7 @@ However, this isn't the focus of this tutorial, and I won't be covering that top
 > 
 > apt install -y libreadline-dev python3-docutils libical-dev libsystemd-dev tk-dev libgdbm-dev pkg-config default-libmysqlclient-dev
 
-############## Fix Bluetooth
+###### Fix Bluetooth
 
 > cd /usr/src
   
@@ -37,7 +37,7 @@ However, this isn't the focus of this tutorial, and I won't be covering that top
   
 > make
   
-############## if there is no errors uninstall old bluez
+###### if there is no errors uninstall old bluez
 
 > apt-get purge bluez
 
@@ -45,11 +45,11 @@ However, this isn't the focus of this tutorial, and I won't be covering that top
 
 > systemctl daemon-reload && systemctl restart dbus bluetooth
 
-############## Check status
+###### Check status
 
 > systemctl status bluetooth.service
 
-############## Fix Bluetooth error messages NET_ADMIN/NET_RAW capabilities
+###### Fix Bluetooth error messages NET_ADMIN/NET_RAW capabilities
 
 > setcap 'cap_net_admin,cap_net_raw+eip' /usr/bin/python3.13
 
@@ -61,7 +61,7 @@ However, this isn't the focus of this tutorial, and I won't be covering that top
 
 > sudo -u homeassistant -H -s
 
-#################### YOU ARE NOW homeassistant USER #############################
+###### YOU ARE NOW homeassistant USER #####
 
 > cd /srv/homeassistant
 
@@ -79,9 +79,13 @@ However, this isn't the focus of this tutorial, and I won't be covering that top
 
 > hass -v
 
-**###### Wait 1 or 2 houres :-) and when you are tired to wait you can hit Ctrl-C**
-##############################################
+**###### Feel free to wait 1 hour to ensure the configuration is done correctly. :-) and when you are tired to wait you can hit Ctrl-C**
+
 Now create the startup script /etc/init.d/homeassistant" with nano or any other tool of your choice or get it by this way:
+
+Change your identity to be root again
+
+> su root
 
 > cd /ect/init.d
 
