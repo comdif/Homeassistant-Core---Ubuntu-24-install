@@ -75,6 +75,8 @@ However, this isn't the focus of this tutorial, and I won't be covering that top
 
 > pip3 install --upgrade "pycares==4.9.0"
 
+> pip3 install zlib_ng isal
+
 > pip3 install mysqlclient
 
 > hass -v
