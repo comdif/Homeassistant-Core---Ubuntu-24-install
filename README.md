@@ -15,73 +15,69 @@ However, this isn't the focus of this tutorial, and I won't be covering that top
 
 **Install all these packages:**
 
-> apt install -y python3.13 python3.13-dev python3.13-venv python3-pip build-essential libffi-dev libssl-dev libjpeg-dev zlib1g-dev bluez
+> `apt install -y python3.13 python3.13-dev python3.13-venv python3-pip build-essential libffi-dev libssl-dev libjpeg-dev zlib1g-dev`
 > 
-> apt install -y libbz2-dev libreadline-dev libsqlite3-dev libncursesw5-dev libxml2-dev libxmlsec1-dev libxslt1-dev
+> `apt install -y libbz2-dev libreadline-dev libsqlite3-dev libncursesw5-dev libxml2-dev libxmlsec1-dev libxslt1-dev`
 > 
-> apt install -y liblzma-dev libudev-dev avahi-daemon libavahi-client-dev dbus systemd libglib2.0-dev libc6-dev libbluetooth-dev
+> `apt install -y liblzma-dev libudev-dev avahi-daemon libavahi-client-dev dbus systemd libglib2.0-dev libc6-dev libbluetooth-dev`
 > 
-> apt install -y libreadline-dev python3-docutils libical-dev libsystemd-dev tk-dev libgdbm-dev pkg-config default-libmysqlclient-dev
+> `apt install -y libreadline-dev python3-docutils libical-dev libsystemd-dev tk-dev libgdbm-dev pkg-config default-libmysqlclient-dev`
 
 ###### Fix Bluetooth
 
-> cd /usr/src
+> `cd /usr/src`
   
-> wget http://www.kernel.org/pub/linux/bluetooth/bluez-5.85.tar.gz
+> `wget http://www.kernel.org/pub/linux/bluetooth/bluez-5.85.tar.gz`
   
-> tar -xzf bluez-5.85.tar.gz
+> `tar -xzf bluez-5.85.tar.gz`
   
-> cd bluez-5.85
+> `cd bluez-5.85`
   
-> ./configure --prefix=/usr --mandir=/usr/share/man --sysconfdir=/etc --localstatedir=/var
+> `./configure --prefix=/usr --mandir=/usr/share/man --sysconfdir=/etc --localstatedir=/var`
   
-> make
+> `make`
   
-###### if there is no errors uninstall old bluez
+> `make install`
 
-> apt-get purge bluez
-
-> make install
-
-> systemctl daemon-reload && systemctl restart dbus bluetooth
+> `systemctl daemon-reload && systemctl restart dbus bluetooth`
 
 ###### Check status
 
-> systemctl status bluetooth.service
+> `systemctl status bluetooth.service`
 
-> systemctl enable bluetooth.service
+> `systemctl enable bluetooth.service`
 
 ###### Fix Bluetooth error messages NET_ADMIN/NET_RAW capabilities
 
-> setcap 'cap_net_admin,cap_net_raw+eip' /usr/bin/python3.13
+> `setcap 'cap_net_admin,cap_net_raw+eip' /usr/bin/python3.13`
 
-> useradd -rm homeassistant -G dialout
+> `useradd -rm homeassistant -G dialout`
 
->  mkdir /srv/homeassistant
+>  `mkdir /srv/homeassistant`
 
-> chown homeassistant:homeassistant /srv/homeassistant
+> `chown homeassistant:homeassistant /srv/homeassistant`
 
-> sudo -u homeassistant -H -s
+> `sudo -u homeassistant -H -s`
 
 ###### YOU ARE NOW homeassistant USER #####
 
-> cd /srv/homeassistant
+> `cd /srv/homeassistant`
 
-> python3.13 -m venv /srv/homeassistant
+> `python3.13 -m venv /srv/homeassistant`
 
-> source bin/activate
+> `source bin/activate`
 
-> python3.13 -m pip install wheel
+> `python3.13 -m pip install wheel`
 
-> pip3 install homeassistant==2025.12.3
+> `pip3 install homeassistant==2025.12.3`
 
-> pip3 install --upgrade "pycares==4.9.0"
+> `pip3 install --upgrade "pycares==4.9.0"`
 
-> pip3 install zlib_ng isal
+> `pip3 install zlib_ng isal`
 
-> pip3 install mysqlclient
+> `pip3 install mysqlclient`
 
-> hass -v
+> `hass -v`
 
 **###### Feel free to wait 1 hour to ensure the configuration is done correctly. :-) and when you are tired to wait you can hit Ctrl-C**
 
@@ -89,17 +85,17 @@ Now create the startup script /etc/init.d/homeassistant" with nano or any other 
 
 Change your identity to be root again
 
-> su root
+> `su root`
 
-> cd /ect/init.d
+> `cd /ect/init.d`
 
-> wget https://raw.githubusercontent.com/comdif/Homeassistant-Core---Ubuntu-24-install/refs/heads/main/homeassistant
+> `wget https://raw.githubusercontent.com/comdif/Homeassistant-Core---Ubuntu-24-install/refs/heads/main/homeassistant`
 
-> chmod 0755 /etc/init.d/homeassistant
+> `chmod 0755 /etc/init.d/homeassistant`
 
-> update-rc.d homeassistant defaults
+> `update-rc.d homeassistant defaults`
 
-> reboot
+> `reboot`
 
 **Once finished you will be able to go to http://your_ip:8123 and enjoy the latest version of home-assistant on an up-to-date OS.**
 
