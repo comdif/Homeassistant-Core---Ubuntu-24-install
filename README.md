@@ -17,7 +17,7 @@ However, this isn't the focus of this tutorial, and I won't be covering that top
 
 > `apt install -y python3.13 python3.13-dev python3.13-venv python3-pip build-essential libffi-dev libssl-dev libjpeg-dev zlib1g-dev`
 > 
-> `apt install -y libbz2-dev libreadline-dev libsqlite3-dev libncursesw5-dev libxml2-dev libxmlsec1-dev libxslt1-dev`
+> `apt install -y libbz2-dev libreadline-dev libsqlite3-dev libncursesw5-dev libxml2-dev libxmlsec1-dev libxslt1-dev automake libtool`
 > 
 > `apt install -y liblzma-dev libudev-dev avahi-daemon libavahi-client-dev dbus systemd libglib2.0-dev libc6-dev libbluetooth-dev`
 > 
@@ -69,7 +69,7 @@ However, this isn't the focus of this tutorial, and I won't be covering that top
 
 > `python3.13 -m pip install wheel`
 
-> `pip3 install homeassistant==2025.12.3`
+> `pip3 install homeassistant==2026.1.0`
 
 > `pip3 install --upgrade "pycares==4.9.0"`
 
