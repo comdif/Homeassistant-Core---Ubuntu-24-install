@@ -16,7 +16,7 @@ Run ssh session as root or with sudo-i
 
 > mysql -u root -e "CREATE USER 'haDBadministrat0rlogin'@'localhost' IDENTIFIED BY 'haDBadministrat0rpassword';"
 
-> mysql -u root -e "GRANT ALL ON homeassistant.* TO 'haDBadministrat0r'@'localhost';"
+> mysql -u root -e "GRANT ALL ON homeassistant.* TO 'haDBadministrat0rlogin'@'localhost';"
 
 > mysql -u root -e "FLUSH PRIVILEGES;"
 
