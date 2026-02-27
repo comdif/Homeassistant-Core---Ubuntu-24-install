@@ -69,7 +69,7 @@ However, this isn't the focus of this tutorial, and I won't be covering that top
 
 > `python3.13 -m pip install wheel`
 
-> `pip3 install homeassistant==2026.1.0`
+> `pip3 install homeassistant==2026.2.3`
 
 > `pip3 install --upgrade "pycares==4.9.0"`
 
