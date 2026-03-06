@@ -15,7 +15,7 @@ However, this isn't the focus of this tutorial, and I won't be covering that top
 
 **Install all these packages:**
 
-> `apt install -y python3.13 python3.13-dev python3.13-venv python3-pip build-essential libffi-dev libssl-dev libjpeg-dev zlib1g-dev`
+> `apt install -y python3.14 python3.14-dev python3.14-venv python3-pip build-essential libffi-dev libssl-dev libjpeg-dev zlib1g-dev`
 > 
 > `apt install -y libbz2-dev libreadline-dev libsqlite3-dev libncursesw5-dev libxml2-dev libxmlsec1-dev libxslt1-dev automake libtool`
 > 
@@ -49,7 +49,7 @@ However, this isn't the focus of this tutorial, and I won't be covering that top
 
 ###### Fix Bluetooth error messages NET_ADMIN/NET_RAW capabilities
 
-> `setcap 'cap_net_admin,cap_net_raw+eip' /usr/bin/python3.13`
+> `setcap 'cap_net_admin,cap_net_raw+eip' /usr/bin/python3.14`
 
 > `useradd -rm homeassistant -G dialout`
 
@@ -63,23 +63,21 @@ However, this isn't the focus of this tutorial, and I won't be covering that top
 
 > `cd /srv/homeassistant`
 
-> `python3.13 -m venv /srv/homeassistant`
+> `python3.14 -m venv /srv/homeassistant`
 
 > `source bin/activate`
 
-> `python3.13 -m pip install wheel`
+> `python3.14 -m pip install wheel`
 
-> `pip3 install homeassistant==2026.2.3`
+> `python3.14 -m pip install homeassistant`
 
-> `pip3 install --upgrade "pycares==4.9.0"`
+> `python3.14 -m pip install zlib_ng isal`
 
-> `pip3 install zlib_ng isal`
-
-> `pip3 install mysqlclient`
+> `python3.14 -m pip install mysqlclient`
 
 > `hass -v`
 
-**###### Feel free to wait 1 hour to ensure the configuration is done correctly. :-) and when you are tired to wait you can hit Ctrl-C**
+**###### Feel free to wait 30 minuts to ensure the configuration is done correctly. :-) and when you are tired to wait you can hit Ctrl-C**
 
 Now create the startup script /etc/init.d/homeassistant" with nano or any other tool of your choice or get it by this way:
 
