@@ -18,13 +18,13 @@ pid_file="/var/run/$name.pid"
 
 case "$1" in
     start)
-		su - homeassistant -c '/srv/homeassistant/bin/python3.13 /srv/homeassistant/bin/hass' &>/dev/null &
-		echo $(pgrep python3.13) > "$pid_file"
-		echo "Running with PID: $(pgrep python3.13)"
+		su - homeassistant -c '/srv/homeassistant/bin/python3.14 /srv/homeassistant/bin/hass' &>/dev/null &
+		echo $(pgrep python3.14) > "$pid_file"
+		echo "Running with PID: $(pgrep python3.14)"
     ;;
     stop)
         echo -n "Stopping $name.."
-        kill $(pgrep python3.13)
+        kill $(pgrep python3.14)
 	rm "/var/run/$name.pid"
 
     ;;
@@ -34,7 +34,7 @@ case "$1" in
     ;;
     status)
         if $(pgrep hass); then
-            echo "Running with PID: $(pgrep python3.13)"
+            echo "Running with PID: $(pgrep python3.14)"
         else
             echo "$name is not running"
             exit 1
