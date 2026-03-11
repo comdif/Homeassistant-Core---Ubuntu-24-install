@@ -1,5 +1,9 @@
 ***Migration from sqlite to Mysql***
 
+This howto is for a migration, if you have a fresh install just create the database and user then fill the configuration.yaml, HA will create the tables for you.
+
+-------
+
 Run ssh session as root or with sudo-i
 
 ***If you have not done it before install Mysql package***
@@ -31,14 +35,6 @@ Run ssh session as root or with sudo-i
 enter your haDBadministrat0rpassword and wait until the operation is done.
 
 ***Now you have to fix the auto-increment counter***
-
-***1) if it's a fresh homeassistant installation:***
-
->wget https://raw.githubusercontent.com/comdif/Homeassistant-Core---Ubuntu-24-install/refs/heads/main/fix-new.sql
-
->mysql -h localhost -u root homeassistant < fix-new.sql
-
-***2) other cases:***
 
 >wget https://raw.githubusercontent.com/comdif/Homeassistant-Core---Ubuntu-24-install/refs/heads/main/fix.sql
 
